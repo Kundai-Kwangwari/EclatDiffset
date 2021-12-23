@@ -1,5 +1,4 @@
 import sys
-import itertools
 import time
 
 # trans_set will store all the tids
