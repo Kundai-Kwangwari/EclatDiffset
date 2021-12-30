@@ -76,10 +76,11 @@ if __name__ == "__main__":
     iFile = sys.argv[1]
     oFile = sys.argv[2]
     minSup = int(sys.argv[3])
-    start = time.time()
-    uniqueItemList = getUniqueItemList(iFile, minSup)
-    runEclatDiffset(uniqueItemList, minSup)
-    end = time.time()
-    writeResults(oFile)
-    Runtime = end - start
+    for i in range(0,6):
+        start = time.time()
+        uniqueItemList = getUniqueItemList(iFile, minSup)
+        runEclatDiffset(uniqueItemList, minSup)
+        end = time.time()
+        #writeResults(oFile)
+        Runtime = end - start
     print("\nTotal patterns found:", len(frequentItems.keys()), '\nminSup', minSup, 'Run time', Runtime, 'seconds')
